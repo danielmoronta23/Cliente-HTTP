@@ -1,6 +1,8 @@
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.util.Scanner;
 
@@ -16,7 +18,9 @@ public class Main {
         System.out.println(URL);
         if(validandoURL(URL)==1) {
             System.out.println("Realizando Operaciones...");
-            System.out.println("a) Cantidad de linea = " + cantLineas(URL));
+            System.out.println("a) Cantidad de linea        = " + cantLineas(URL));
+            System.out.println("b) Cantidad de de Parrafos  = "+ canParrafos(doc));
+            System.out.println("c) Cantidad de Imagenes     = "+ cantImagenes(doc));
         }
 
     }
@@ -41,5 +45,22 @@ public class Main {
 
         }
         return cant;
+    }
+    public static int canParrafos(Document doc){
+
+        Elements paragraphs = doc.getElementsByTag("p");//un arrreglo con de las etiqueta <<p>>
+        return paragraphs.size();//la cant de veces que esta la etiqueta.
+
+    }
+    public static int cantImagenes(Document doc){
+
+        Elements parrafos = doc.getElementsByTag("p");
+
+        int cantImagen=0;
+
+        for (Element p: parrafos) {
+            cantImagen += p.getElementsByTag("img").size();
+        }
+        return cantImagen;
     }
 }
