@@ -25,8 +25,8 @@ public class Main {
             System.out.println("b) Cantidad de de Parrafos         = " + canParrafos(doc)+"\n");
             System.out.println("c) Imagenes dentro de parrafos     = " + cantImagenes(doc)+"\n");
             System.out.println("d) Cantidad de Formulario          = " + ElementosFormulario(doc).size() + "   GET=" + CanFormularioGET(doc) + "    POST=" + CantFormularioPOST(doc)+"\n");
-            System.out.println("c) Cantidad de Imagenes            = " + cantImagenes(doc)+"\n");
-            System.out.println("e) Entra formulario:" + entradas(doc));
+            System.out.println("e) Cantidad de Imagenes            = " + cantImagenes(doc)+"\n");
+            System.out.println("f) Entra formulario:" + entradas(doc));
 
             try {
                 System.out.println("F) Repuesta del Server : \n" + repuestaPost(doc)+"\n");
